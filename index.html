@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="reddit">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reddit Angular</title>
+</head>
+<body>
+    <div ng-controller="PostsController as posts">
+        <ul>
+            <li ng-repeat="posts in self.posts">{{posts.body}}</li>
+        </ul>
+    </div>
+    
+    <script type="text/javascript" src="node_modules/angular/angular.js"></script>
+    <script type="text/javascript" src="node_modules/@uirouter/angularjs/release/angular-ui-router.js"></script>
+    <script type="text/javascript" src="js/module.js"></script>
+    <script type="text/javascript" src="js/http.service.js"></script>
+    <script type="text/javascript" src="js/posts.controller.js"></script>
+</body>
+</html>
