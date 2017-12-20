@@ -1,3 +1,3 @@
 
 angular
-    .module("reddit", ["ui.router"])
+    .module("reddit", ["ngRoute"])

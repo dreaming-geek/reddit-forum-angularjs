@@ -9,8 +9,8 @@
   "author": "Joseph Williams",
   "license": "ISC",
   "dependencies": {
-    "@uirouter/angularjs": "^1.0.11",
     "angular": "^1.6.6",
+    "angular-route": "^1.6.7",
     "bootstrap": "^4.0.0-beta.2"
   }
 }

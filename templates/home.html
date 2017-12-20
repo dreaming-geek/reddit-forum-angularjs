@@ -1,0 +1,13 @@
+   <div ng-controller="PostsController as posts">
+        <ul>
+          <div ng-repeat="posts in this.posts">
+            <li ng-repeat="post in posts">
+              <h3><a href="">{{post.title}}</a></h3>
+              <p><a href="">Username: {{post.userId}}</a></p>
+              <p>{{post.body}}</p>
+            </li>
+          </div>
+            
+        </ul>
+        
+    </div>
