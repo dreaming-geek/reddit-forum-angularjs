@@ -5,21 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Reddit Angular</title>
+    <!--<script>document.write('<base href="' + document.location + '" />');</script>-->
 </head>
 <body>
-    <!--<div ng-controller="PostsController as posts">-->
-    <!--    <ul>-->
-    <!--      <div ng-repeat="posts in this.posts">-->
-    <!--        <li ng-repeat="post in posts">-->
-    <!--          <h3><a href="">{{post.title}}</a></h3>-->
-    <!--          <p><a href="">Username: {{post.userId}}</a></p>-->
-    <!--          <p>{{post.body}}</p>-->
-    <!--        </li>-->
-    <!--      </div>-->
-            
-    <!--    </ul>-->
-        
-    <!--</div>-->
+    
     <div ng-view></div>
     
     <script type="text/javascript" src="node_modules/angular/angular.js"></script>
@@ -28,7 +17,7 @@
     <script type="text/javascript" src="js/http.service.js"></script>
     <script type="text/javascript" src="js/posts.controller.js"></script>
     <script type="text/javascript" src="js/postDetails.controller.js"></script>
-    <script type="text/javascript" src="js/users.controller.js"></script>
+    <script type="text/javascript" src="js/userDetails.controller.js"></script>
     <script type="text/javascript" src="js/routes.js"></script>
 </body>
 </html>

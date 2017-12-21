@@ -3,13 +3,20 @@ angular
   .module("reddit")
   .config(redditRoutes)
   
-function redditRoutes($routeProvider, $locationProvider) {
+function redditRoutes($routeProvider) {
   $routeProvider
-    .when("/", {
+    .when('/', {
       templateUrl: "/templates/home.html"
     })
-    .otherwise({
-      redirect: "/"
+    .when('/postDetails/:postId', {
+      templateUrl: "/templates/postDetails.html"
     })
+    .when('/userDetails/:userId', {
+      templateUrl: "/templates/userDetails.html"
+    })
+    .otherwise({
+      redirectTo: "/"
+    })
+    
 }
   
