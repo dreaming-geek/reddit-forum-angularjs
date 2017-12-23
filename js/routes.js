@@ -3,7 +3,7 @@ angular
   .module("reddit")
   .config(redditRoutes)
   
-function redditRoutes($routeProvider) {
+function redditRoutes($routeProvider, $locationProvider) {
   $routeProvider
     .when('/', {
       templateUrl: "/templates/home.html"
@@ -17,6 +17,10 @@ function redditRoutes($routeProvider) {
     .otherwise({
       redirectTo: "/"
     })
+    
+    $locationProvider
+      .hashPrefix('')
+    
     
 }
   

@@ -3,13 +3,16 @@ angular
   .module("reddit")
   .controller("PostDetailController", PostDetailController)
   
-function PostDetailController($routeParams, httpService) {
-  // #TODO: Make a function or service to check the $routeParams to see if it is valid
+function PostDetailController($routeParams, httpService, $location) {
+  
+  if($routeParams.postId === "0") {
+    $location.path("/")
+  }
+  
   this.postId = $routeParams.postId
   
   httpService.getPost(this.postId)
         .then((post) => {
             this.post = post
-            console.log(post)
         })
 }

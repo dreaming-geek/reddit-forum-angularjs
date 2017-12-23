@@ -3,8 +3,11 @@ angular
   .module("reddit")
   .controller("UserDetailController", UserDetailController)
   
-function UserDetailController($routeParams, httpService) {
-  // #TODO: Make a function or service to check the $routeParams to see if it is valid
+function UserDetailController($routeParams, httpService, $location) {
+  if($routeParams.userId === "0") {
+    $location.path("/")
+  }
+  
   this.userId = $routeParams.userId
   
   httpService.getUser(this.userId)

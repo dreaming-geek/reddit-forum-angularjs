@@ -5,9 +5,14 @@ angular
     
 function PostsController(httpService) {
     
+    // #TODO: Need posts with usernames
     httpService.getPosts()
         .then((posts) => {
             this.posts = posts
+            
+            // httpService.getPostsandUsers()
         })
+    
+   
 
 }
