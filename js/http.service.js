@@ -10,28 +10,42 @@ function httpService($http, $q) {
         return $http.get(`${apiUrl}posts`)
             .then((res) => {
                 return res.data
-            })
+            }, this.errorCheck)
     }
     
     this.getPost = (postId) => {
       return $http.get(`${apiUrl}posts/${postId}`)
         .then((res) => {
           return res.data
-        })
+        }, this.errorCheck)
+    }
+    
+    this.getComments = (postId) => {
+      return $http.get(`${apiUrl}posts/${postId}/comments`)
+        .then((res) => {
+          return res.data
+        }, this.errorCheck)
     }
     
     this.getUsers = () => {
       return $http.get(`${apiUrl}users`)
         .then((res) => {
           return res.data
-        })
+        }, this.errorCheck)
+    }
+    
+    this.getUserPosts = (userId) => {
+      return $http.get(`${apiUrl}users/${userId}/posts`)
+        .then((res) => {
+          return res.data
+        }, this.errorCheck)
     }
     
     this.getUser = (userId) => {
       return $http.get(`${apiUrl}users/${userId}`)
         .then((res) => {
           return res.data
-        })
+        }, this.errorCheck)
     }
     
     this.getPostsandUsers = () => {
@@ -52,4 +66,6 @@ function httpService($http, $q) {
           }
         })
     }
+    
+    this.errorCheck = (res) => res
 }

@@ -12,7 +12,5 @@ function PostsController(httpService) {
             
             // httpService.getPostsandUsers()
         })
-    
-   
 
 }

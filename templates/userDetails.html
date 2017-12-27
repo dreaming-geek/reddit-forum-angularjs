@@ -2,4 +2,16 @@
   <!--Username and name are toggle and can be editted-->
   <h3>{{uD.user.username}}</h3>
   <p>{{uD.user.email}}</p>
+  
+  <div class="userPosts">
+    <h3>User Posts:</h3>
+    <div class="card">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" ng-repeat="posts in uD.posts">
+          <h4 class="card-title">{{posts.title}}</h4>
+          {{posts.body}}
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>

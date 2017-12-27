@@ -2,4 +2,16 @@
   <h2>{{pD.post.title}}</h2>
   <p>Username: {{pD.post.userId}}</p>
   <p>{{pD.post.body}}</p>
+  <div class="comments">
+    <h3>Comments:</h3>
+    <div class="card">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item" ng-repeat="comments in pD.comments">
+          <!--comments data does not contain a userId, nor do the emails match in the users info-->
+          <h6 class="card-subtitle mb-2 text-muted">{{comments.email}}</h6>
+          {{comments.body}}
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>

@@ -11,7 +11,12 @@ function UserDetailController($routeParams, httpService, $location) {
   this.userId = $routeParams.userId
   
   httpService.getUser(this.userId)
-        .then((user) => {
-            this.user = user
-        })
+    .then((user) => {
+      this.user = user
+    })
+    
+  httpService.getUserPosts(this.userId)
+    .then((posts) => {
+      this.posts = posts
+    })
 }
