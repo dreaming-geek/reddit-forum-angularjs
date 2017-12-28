@@ -1,15 +1,72 @@
-<div ng-controller="UserDetailController as uD">
-  <!--Username and name are toggle and can be editted-->
-  <h3>{{uD.user.username}}</h3>
-  <p>{{uD.user.email}}</p>
+<div ng-controller="UserDetailController as uD" class="container">
+
+    <div class="container">
+        <div class="card">
+          <h5 class="card-header">Contact Information</h5>
+          <div class="card-body">
+            <!--username-->
+            <p class="card-text">
+              Username:
+              <div class="input-group">
+                  <span class="input-group-addon">
+                    <input type="checkbox" aria-label="Checkbox for username" ng-model="userNameChecked">
+                  </span>
+                  <input type="text" class="form-control"
+                    ng-model="uD.username"
+                    ng-disabled="!userNameChecked"
+                    ng-value="uD.user.username">
+                  <span class="input-group-btn">
+                    <button class="btn btn-secondary" type="button">Update</button>
+                  </span>
+              </div>
+            </p>
+            <!--/username-->
+            <!--name-->
+            <p class="card-text">
+              Name:
+              <div class="input-group">
+                  <span class="input-group-addon">
+                    <input type="checkbox" aria-label="Checkbox for name" ng-model="nameChecked">
+                  </span>
+                  <input type="text" class="form-control"
+                    ng-model="uD.name"
+                    ng-disabled="!nameChecked"
+                    ng-value="uD.user.name">
+                  <span class="input-group-btn">
+                    <button class="btn btn-secondary" type="button">Update</button>
+                  </span>
+              </div>
+            </p>
+            <!--/name-->
+            <p class="card-text">Email: {{uD.user.email}}</p>
+            <p class="card-text">Phone: {{uD.user.phone}}</p>
+            <p class="card-text">Website: {{uD.user.website}}</p>
+            
+          </div>
+        </div>
+     
+        <div class="card">
+          <div class="card-header">
+            Address
+          </div>
+          <div class="card-body">
+            <p class="card-text">Street: {{uD.user.address.street}}</p>
+            <p class="card-text">Suite: {{uD.user.address.suite}}</p>
+            <p class="card-text">City: {{uD.user.address.city}}</p>
+            <p class="card-text">Zipcode: {{uD.user.address.zipcode}}</p>
+          </div>
+        </div>
+    </div>
+  
+  
   
   <div class="userPosts">
     <h3>User Posts:</h3>
     <div class="card">
       <ul class="list-group list-group-flush">
         <li class="list-group-item" ng-repeat="posts in uD.posts">
-          <h4 class="card-title">{{posts.title}}</h4>
-          {{posts.body}}
+          <div class="card-body"><a href="#/postDetails/{{posts.id}}">{{posts.title}}</a></div>
+          
         </li>
       </ul>
     </div>
