@@ -48,22 +48,22 @@ function httpService($http, $q) {
         }, this.errorCheck)
     }
     
+    this.updateUser = (userId, data) => {
+      return $http.put(`${apiUrl}users/${userId}`, data)
+        .then((res) => {
+          return res
+        }, this.errorCheck)
+    }
+    
     this.getPostsandUsers = () => {
       let posts = this.getPosts()
       let users = this.getUsers()
       
       $q.all([posts, users])
         .then((results) => {
-          // console.log(results)
           // results[0] is posts
           // results[1] is users
-          for (let post of results[0]) {
-            for (let user of results[1]) {
-              if(post.userId === user.id) {
-                
-              }
-            }
-          }
+          
         })
     }
     

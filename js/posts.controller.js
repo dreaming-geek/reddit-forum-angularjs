@@ -10,7 +10,7 @@ function PostsController(httpService) {
         .then((posts) => {
             this.posts = posts
             
-            // httpService.getPostsandUsers()
+            httpService.getPostsandUsers()
         })
 
 }

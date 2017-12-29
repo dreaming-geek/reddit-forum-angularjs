@@ -9,14 +9,19 @@
               Username:
               <div class="input-group">
                   <span class="input-group-addon">
-                    <input type="checkbox" aria-label="Checkbox for username" ng-model="userNameChecked">
+                    <input id="user.usernameCheck" type="checkbox"
+                    aria-label="Checkbox for username"
+                    ng-model="userNameChecked">
                   </span>
                   <input type="text" class="form-control"
+                    id="user.username"
                     ng-model="uD.username"
                     ng-disabled="!userNameChecked"
                     ng-value="uD.user.username">
                   <span class="input-group-btn">
-                    <button class="btn btn-secondary" type="button">Update</button>
+                    <button class="btn btn-secondary" type="button"
+                      ng-click=uD.updateUserName(uD.username)>Update
+                    </button>
                   </span>
               </div>
             </p>
@@ -26,14 +31,20 @@
               Name:
               <div class="input-group">
                   <span class="input-group-addon">
-                    <input type="checkbox" aria-label="Checkbox for name" ng-model="nameChecked">
+                    <input id="user.nameCheck" type="checkbox"
+                    aria-label="Checkbox for name"
+                    ng-model="nameChecked">
                   </span>
                   <input type="text" class="form-control"
+                    id="user.name"
                     ng-model="uD.name"
                     ng-disabled="!nameChecked"
-                    ng-value="uD.user.name">
+                    ng-value="uD.user.name"
+                    >
                   <span class="input-group-btn">
-                    <button class="btn btn-secondary" type="button">Update</button>
+                    <button class="btn btn-secondary" type="button"
+                      ng-click=uD.updateName(uD.name)>Update
+                    </button>
                   </span>
               </div>
             </p>
