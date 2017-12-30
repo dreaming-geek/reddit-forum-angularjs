@@ -5,7 +5,7 @@ angular
     
 function httpService($http, $q) {
   let apiUrl = "https://jsonplaceholder.typicode.com/"
-  // #TODO: make error case for each $http call
+  
     this.getPosts = () => {
         return $http.get(`${apiUrl}posts`)
             .then((res) => {
