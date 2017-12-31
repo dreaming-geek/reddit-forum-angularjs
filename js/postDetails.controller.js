@@ -11,12 +11,13 @@ function PostDetailController($routeParams, httpService, $location) {
   
   this.postId = $routeParams.postId
   
-  // get post
-  httpService.getPost(this.postId)
-    .then((post) => {
-      this.post = post
-    })
-        
+  // get post and user
+    httpService.getPostandUser(this.postId)
+      .then((res) => {
+        this.post = res
+      })
+
+
   // get comments
   // NOTE: comments data does not contain a userId, nor do the emails match in the users info
   httpService.getComments(this.postId)

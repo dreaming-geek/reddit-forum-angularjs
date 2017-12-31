@@ -1,7 +1,7 @@
 <div ng-controller="PostDetailController as pD" class="container">
   <div class="container">
     <h2>{{pD.post.title}}</h2>
-    <p>Username: {{pD.post.userId}}</p>
+    <p><a href="#/userDetails/{{pD.post.userId}}">Author: {{pD.post.username}}</a></p>
     <p>{{pD.post.body}}</p>
     <button type="button" class="btn btn-primary">
       <img src="images/thumbsup.svg" alt="thumbs-up" class="rounded">

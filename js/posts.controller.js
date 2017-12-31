@@ -5,9 +5,8 @@ angular
     
 function PostsController(httpService) {
     
-    httpService.getPosts()
-      .then((posts) => {
-        this.posts = posts
-        // httpService.getPostsandUsers()
+    httpService.getPostsandUsers()
+      .then((res) => {
+        this.posts = res
       })
 }

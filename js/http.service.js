@@ -55,15 +55,34 @@ function httpService($http, $q) {
         }, this.errorCheck)
     }
     
+    this.getPostandUser = (postId) => {
+      let bothArr = []
+      return this.getPost(postId)
+        .then((post) => {
+           return this.getUser(post.userId)
+            .then((user) => {
+              post.username = user.username
+              return post
+            })
+        })
+    }
+    
     this.getPostsandUsers = () => {
       let posts = this.getPosts()
       let users = this.getUsers()
       
-      $q.all([posts, users])
+      return $q.all([posts, users])
         .then((results) => {
-          // results[0] is posts
-          // results[1] is users
-          
+          let bothArr = []
+          for(post of results[0]){
+            for(user of results[1]){
+              if(post.userId === user.id){
+                post.username = user.username
+                bothArr.push(post)
+              }
+            }
+          }
+          return bothArr
         })
     }
     
