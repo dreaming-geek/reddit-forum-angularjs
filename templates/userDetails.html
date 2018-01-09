@@ -1,4 +1,4 @@
-<div ng-controller="UserDetailController as uD" class="container">
+<div ng-controller="UserDetailController as UserDetailCtrl" class="container">
 
     <div class="container">
         <div class="card">
@@ -15,12 +15,12 @@
                   </span>
                   <input type="text" class="form-control"
                     id="user.username"
-                    ng-model="uD.username"
+                    ng-model="UserDetailCtrl.username"
                     ng-disabled="!userNameChecked"
-                    ng-value="uD.user.username">
+                    ng-value="UserDetailCtrl.user.username">
                   <span class="input-group-btn">
                     <button class="btn btn-secondary" type="button"
-                      ng-click=uD.updateUserName(uD.username)>Update
+                      ng-click=uD.updateUserName(UserDetailCtrl.username)>Update
                     </button>
                   </span>
               </div>
@@ -37,21 +37,21 @@
                   </span>
                   <input type="text" class="form-control"
                     id="user.name"
-                    ng-model="uD.name"
+                    ng-model="UserDetailCtrl.name"
                     ng-disabled="!nameChecked"
-                    ng-value="uD.user.name"
+                    ng-value="UserDetailCtrl.user.name"
                     >
                   <span class="input-group-btn">
                     <button class="btn btn-secondary" type="button"
-                      ng-click=uD.updateName(uD.name)>Update
+                      ng-click=uD.updateName(UserDetailCtrl.name)>Update
                     </button>
                   </span>
               </div>
             </p>
             <!--/name-->
-            <p class="card-text">Email: {{uD.user.email}}</p>
-            <p class="card-text">Phone: {{uD.user.phone}}</p>
-            <p class="card-text">Website: {{uD.user.website}}</p>
+            <p class="card-text">Email: {{UserDetailCtrl.user.email}}</p>
+            <p class="card-text">Phone: {{UserDetailCtrl.user.phone}}</p>
+            <p class="card-text">Website: {{UserDetailCtrl.user.website}}</p>
             
           </div>
         </div>
@@ -61,10 +61,10 @@
             Address
           </h6>
           <div class="card-body">
-            <p class="card-text">Street: {{uD.user.address.street}}</p>
-            <p class="card-text">Suite: {{uD.user.address.suite}}</p>
-            <p class="card-text">City: {{uD.user.address.city}}</p>
-            <p class="card-text">Zipcode: {{uD.user.address.zipcode}}</p>
+            <p class="card-text">Street: {{UserDetailCtrl.user.address.street}}</p>
+            <p class="card-text">Suite: {{UserDetailCtrl.user.address.suite}}</p>
+            <p class="card-text">City: {{UserDetailCtrl.user.address.city}}</p>
+            <p class="card-text">Zipcode: {{UserDetailCtrl.user.address.zipcode}}</p>
           </div>
         </div>
     </div>
@@ -75,7 +75,7 @@
     <h3>User Posts:</h3>
     <div class="card">
       <ul class="list-group list-group-flush">
-        <li class="list-group-item" ng-repeat="posts in uD.posts">
+        <li class="list-group-item" ng-repeat="posts in UserDetailCtrl.posts">
           <div class="card-body"><a href="#/postDetails/{{posts.id}}">{{posts.title}}</a></div>
           
         </li>

@@ -1,14 +1,13 @@
-   <div ng-controller="PostsController as posts" class="container">
+   <div ng-controller="PostsController as PostsCtrl" class="container">
         
-          <div ng-repeat="posts in this.posts">
-            
-            <div class="card" ng-repeat="post in posts">
+          
+            <div class="card" ng-repeat="post in PostsCtrl.posts">
               <div class="card-body">
                 <h4 class="card-title"><a href="#/postDetails/{{post.id}}">{{post.title}}</a></h4>
                 <h6 class="card-subtitle mb-2 text-muted"><a href="#/userDetails/{{post.userId}}">Author: {{post.username}}</a></h6>
                 <img src="images/thumbsup.svg" alt="thumbs-up" class="rounded">
               </div>
             </div>
-          </div>
+          
  
     </div>

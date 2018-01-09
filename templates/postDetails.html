@@ -1,7 +1,7 @@
-<div ng-controller="PostDetailController as pD" class="container">
+<div ng-controller="PostDetailController as PostDetailCtrl" class="container">
   <div class="container">
-    <h2>{{pD.post.title}}</h2>
-    <p><a href="#/userDetails/{{pD.post.userId}}">Author: {{pD.post.username}}</a></p>
+    <h2>{{PostDetailCtrl.post.title}}</h2>
+    <p><a href="#/userDetails/{{PostDetailCtrl.post.userId}}">Author: {{PostDetailCtrl.post.username}}</a></p>
     <p>{{pD.post.body}}</p>
     <button type="button" class="btn btn-primary">
       <img src="images/thumbsup.svg" alt="thumbs-up" class="rounded">
@@ -13,7 +13,7 @@
       <h3>Comments:</h3>
       <div class="card">
         <ul class="list-group list-group-flush">
-          <li class="list-group-item" ng-repeat="comments in pD.comments">
+          <li class="list-group-item" ng-repeat="comments in PostDetailCtrl.comments">
             <!--NOTE: comments data does not contain a userId, nor do the emails match in the users info-->
             <h6 class="card-subtitle mb-2 text-muted">{{comments.email}}</h6>
             {{comments.body}}
